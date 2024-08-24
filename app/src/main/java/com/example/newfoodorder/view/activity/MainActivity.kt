@@ -24,7 +24,6 @@ class MainActivity : BaseActivity() {
             override fun handleOnBackPressed() {
                 showConfirmExitApp()
             }
-
         })
 
     }

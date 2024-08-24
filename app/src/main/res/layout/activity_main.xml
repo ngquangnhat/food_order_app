@@ -8,7 +8,7 @@
         <import type="android.view.View" />
 
         <variable
-            name="MainViewModel"
+            name="mainViewModel"
             type="com.example.newfoodorder.viewmodel.MainViewModel" />
     </data>
 
@@ -22,8 +22,17 @@
             android:id="@+id/layout_toolbar"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
-            android:visibility="@{MainViewModel.isShowToolbar ? View.VISIBLE : View.GONE}"
-            android:background="@color/colorPrimary"/>
+            android:visibility="@{mainViewModel.isShowToolbar ? View.VISIBLE : View.GONE}"
+            android:background="@color/colorPrimary">
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@{mainViewModel.title}"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </RelativeLayout>
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewpager"

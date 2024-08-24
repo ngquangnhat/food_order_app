@@ -2,7 +2,7 @@ package com.example.newfoodorder.constant
 
 interface AboutUsConfig {
     companion object {
-        const val ABOUT_US_TITLE: String = "Group 13"
+        const val ABOUT_US_TITLE: String = "The Sun"
         const val ABOUT_US_CONTENT: String = "Android Application Developer"
         const val ABOUT_US_SLOGAN: String = "HaNoi University Of Industry"
         const val ABOUT_US_WEBSITE_TITLE: String = "Our University"
