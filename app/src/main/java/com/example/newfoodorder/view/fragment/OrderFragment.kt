@@ -6,18 +6,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.newfoodorder.R
+import com.example.newfoodorder.databinding.FragmentOrderBinding
+import com.example.newfoodorder.view.BaseFragment
+import com.example.newfoodorder.view.activity.MainActivity
+import com.example.newfoodorder.viewmodel.OrderViewModel
 
-class OrderFragment : Fragment() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+class OrderFragment : BaseFragment() {
+    private lateinit var orderViewModel: OrderViewModel
+    override fun initToolbar() {
+        (activity as? MainActivity)?.setToolBar(true, getString(R.string.order))
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_order, container, false)
+    ): View {
+        val binding = FragmentOrderBinding.inflate(inflater, container, false)
+        orderViewModel = OrderViewModel(requireActivity())
+        binding.orderViewModel = orderViewModel
+        binding.lifecycleOwner = viewLifecycleOwner
+        return binding.root
     }
 }

@@ -12,8 +12,8 @@ interface AboutUsConfig {
         const val LINK_YOUTUBE: String = "https://www.youtube.com/@nguyenquangnhat6885"
         const val PHONE_NUMBER: String = "0988710831"
         const val GMAIL: String = "quangnhat2211dev@gmail.com"
-        const val SKYPE_ID: String = "dangtin29932"
-        const val ZALO_LINK: String = "https://zalo.me/g/wzpznh002"
+        const val SKYPE_ID: String = "2uangnhatxyz123"
+        const val ZALO_LINK: String = "https://zalo.me/0988710831"
         const val WEBSITE: String = "https://www.haui.edu.vn/vn"
     }
 }

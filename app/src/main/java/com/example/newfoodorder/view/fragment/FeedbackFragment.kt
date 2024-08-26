@@ -6,22 +6,28 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.newfoodorder.R
+import com.example.newfoodorder.databinding.FragmentFeedbackBinding
+import com.example.newfoodorder.model.Feedback
+import com.example.newfoodorder.view.BaseFragment
+import com.example.newfoodorder.view.activity.MainActivity
 
-class FeedbackFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+class FeedbackFragment : BaseFragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    private lateinit var feedbackViewModel: Feedback
+    override fun initToolbar() {
+        (activity as? MainActivity)?.setToolBar(true, getString(R.string.feedback))
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_feedback, container, false)
+        val feedbackBinding = FragmentFeedbackBinding.inflate(inflater, container, false)
+        feedbackViewModel = Feedback()
+        feedbackBinding.feedbackModel = feedbackViewModel
+        feedbackBinding.lifecycleOwner = viewLifecycleOwner
+        return  feedbackBinding.root
     }
 
 }

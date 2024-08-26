@@ -50,4 +50,17 @@
     <string name="address_delivery">Địa chỉ giao hàng</string>
     <string name="order_cart">Đặt hàng</string>
     <string name="total">Tổng tiền</string>
+    <string name="name_require">Vui lòng nhập họ tên của bạn</string>
+    <string name="comment_require">Vui lòng nhập phản hồi của bạn</string>
+    <string name="send_feedback_success">"Gửi phản hồi thành công "</string>
+    <string name="feedback_email">Email</string>
+    <string name="feedback_comment">Nội dung phản hồi (*)</string>
+    <string name="send_feedback">Gửi phản hồi</string>
+    <string name="label_id">Mã đơn hàng:</string>
+    <string name="label_name">Họ tên:</string>
+    <string name="label_phone">Số điện thoại:</string>
+    <string name="label_address">Địa chỉ:</string>
+    <string name="label_menu">Thực đơn</string>
+    <string name="label_date">Ngày đặt hàng:</string>
+    <string name="label_payment">Thanh toán:</string>
 </resources>

@@ -6,19 +6,28 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.newfoodorder.R
+import com.example.newfoodorder.databinding.FragmentContactBinding
+import com.example.newfoodorder.view.BaseFragment
+import com.example.newfoodorder.view.activity.MainActivity
+import com.example.newfoodorder.viewmodel.ContactViewModel
 
-class ContactFragment : Fragment() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+class ContactFragment : BaseFragment() {
+    private lateinit var contactViewModel: ContactViewModel
+    override fun initToolbar() {
+        (activity as MainActivity).setToolBar(true, getString(R.string.contact))
     }
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_contact, container, false)
+    ): View {
+        val binding = FragmentContactBinding.inflate(inflater, container, false)
+        contactViewModel = ContactViewModel(requireActivity())
+        binding.contactViewModel = contactViewModel
+        binding.lifecycleOwner = viewLifecycleOwner
+        return binding.root
     }
+
 
 }

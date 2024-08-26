@@ -54,10 +54,10 @@ object GlobalFunction {
             skypeIntent.setComponent(ComponentName("com.skype.raider", "com.skype.raider.Main"))
             context.startActivity(skypeIntent)
         } catch (e: java.lang.Exception) {
-            openSkypeWebview(context)
+            openSkypeWebView(context)
         }
     }
-    private fun openSkypeWebview(context: Context) {
+    private fun openSkypeWebView(context: Context) {
         try {
             context.startActivity(
                 Intent(
@@ -124,7 +124,7 @@ object GlobalFunction {
                 return
             }
 
-            val callIntent = Intent(Intent.ACTION_CALL)
+            val callIntent = Intent(Intent.ACTION_DIAL)
             callIntent.setData(Uri.parse("tel:" + AboutUsConfig.PHONE_NUMBER))
             activity.startActivity(callIntent)
         } catch (ex: java.lang.Exception) {
